@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mynotes/views/register_view.dart';
+import 'package:mynotes/constants/routes.dart';
 import 'dart:developer' as devtools show log;
 
 class LoginView extends StatefulWidget {
@@ -78,12 +78,8 @@ class _LoginViewState extends State<LoginView> {
           ),
           TextButton(
               onPressed: () {
-                Navigator.pushAndRemoveUntil<void>(
-                  context,
-                  MaterialPageRoute<void>(
-                      builder: (BuildContext context) => const RegisterView()),
-                  ModalRoute.withName('/'),
-                );
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil(registerRoute, (route) => false);
               },
               child: const Text('Not registered yet? Register Here!'))
         ],
