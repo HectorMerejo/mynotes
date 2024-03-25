@@ -1,5 +1,8 @@
 import 'package:mynotes/services/auth/auth_user.dart';
 
+//Abstract class dictating interface for any authentication provider
+//Added to the app
+
 abstract class AuthProvider {
   AuthUser? get currentUser;
 
