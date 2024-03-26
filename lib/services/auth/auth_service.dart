@@ -6,7 +6,7 @@ class AuthService implements AuthProvider {
   final AuthProvider provider;
   const AuthService(this.provider);
 
-  // Return an instance of our authservice thats
+  // Return an instance of our auth-service that's
   // configured with firebase auth provider
   factory AuthService.firebase() => AuthService(FirebaseAuthProvider());
 
